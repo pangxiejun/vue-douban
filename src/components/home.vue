@@ -51,7 +51,7 @@
   }
 
   .left {
-    width: 15%;
+    width: 20%;
     padding: 0 20px;
     float: left;
   }

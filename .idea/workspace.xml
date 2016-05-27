@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a750085-8e32-44e5-a569-f33488ee7dd6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/movie.vue" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/book.vue" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/faved.vue" afterPath="$PROJECT_DIR$/src/components/faved.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search.vue" afterPath="$PROJECT_DIR$/src/components/search.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store.js" afterPath="$PROJECT_DIR$/src/store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home.vue" afterPath="$PROJECT_DIR$/src/components/home.vue" />
     </list>
     <ignored path="vue-douban.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="faved.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/faved.vue">
+      <file leaf-file-name="home.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/home.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            <state relative-caret-position="431">
+              <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -231,12 +221,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464335580519</updated>
-      <workItem from="1464335583435" duration="9703000" />
+      <workItem from="1464335583435" duration="10226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9703000" />
+    <option name="totallyTimeSpent" value="10226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="99" y="124" width="1235" height="873" extended-state="0" />
@@ -380,6 +370,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/faved.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <marker date="1464343862000" expanded="true" signature="9:169" ph="..." />
+            <marker date="1464343862000" expanded="true" signature="177:258" ph="..." />
+            <marker date="1464343862000" expanded="true" signature="186:249" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="267:927" ph="..." />
+            <marker date="1464343862000" expanded="true" signature="322:918" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="376:624" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="405:618" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="490:589" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="542:579" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="639:914" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="667:868" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="689:771" ph="{...}" />
+            <marker date="1464343862000" expanded="true" signature="899:908" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
@@ -402,41 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
-          <folding>
-            <marker date="1464346502000" expanded="true" signature="9:609" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="33:597" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="83:589" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="195:268" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="294:579" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="361:435" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="617:1573" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="623:692" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="706:760" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="767:807" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="815:893" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="903:1026" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1036:1095" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1106:1132" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1202:1351" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1374:1565" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1582:2106" ph="..." />
-            <marker date="1464346502000" expanded="true" signature="1633:2097" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1657:1706" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1672:1700" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1724:1741" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1768:2093" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="1893:1998" ph="{...}" />
-            <marker date="1464346502000" expanded="true" signature="2026:2079" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/faved.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="431">
+          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
           <folding />
         </state>
       </provider>

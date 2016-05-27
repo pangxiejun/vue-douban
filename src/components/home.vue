@@ -1,5 +1,4 @@
 <template>
-  <input type="text" v-model="query" @keyup.enter="search()" placeholder="请输入你需要找的电影"/>
   <ul class="clearfix">
     <li v-for="movie in movies" class="clearfix">
       <!--<div class="img" style="background-image:url({{}})">-->
@@ -20,13 +19,78 @@
   </ul>
 </template>
 <style>
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .clearfix {
+    overflow: auto;
+    zoom: 1;
+    padding: 0;
+  }
+
+  ul {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    display: block;
+    padding: 0;
+    box-shadow: 0px 0px 5px #1D1A1A;
+  }
+
+  ul li {
+    with: 100%;
+    display: block;
+    border: none;
+    position: relative;
+    margin: 20px 0;
+    color: #D8D0D0;
+  }
+
+  .left {
+    width: 15%;
+    padding: 0 20px;
+    float: left;
+  }
+
+  .right {
+    padding: 0 20px;
+  }
+
+  /*ul li:hover {*/
+  /*border: 1px solid #f00;*/
+  /*}*/
+
+  .title {
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    color: #D8D0D0;
+  }
+
+  input[type="text"] {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 0 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+  }
 </style>
 <script>
   import Fav from './faved.vue'
   export default {
     data: function () {
       return {
-        query: '',
         movies: []
       }
     },
@@ -44,20 +108,6 @@
                 console.log('fail')
               }
       )
-    },
-    methods: {
-      search: function () {
-        var self = this
-        this.$http.jsonp('https://api.douban.com/v2/movie/search?q=' + this.query).then(
-                function (data) {
-                  self.movies = data.data.subjects
-                  console.log(data.data.subjects)
-                },
-                function () {
-                  console.log('fail')
-                }
-        )
-      }
     }
   }
 </script>

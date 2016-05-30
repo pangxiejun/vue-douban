@@ -1,17 +1,43 @@
 <template>
-  <p>{{msg}}</p>
-  <p>
-    <img :src="movie.images.large">
-  </p>
-  <p>书名:{{movie.title}}</p>
-  <p>
-    <span>标签：</span> <span v-for="tag in movie.tags">{{tag.name}}&nbsp;&nbsp;&nbsp;</span>
-  </p>
-  <div class="btn-box">
-    <fav :movieid="movie.id" :movietitle="movie.title"></fav>
+  <div class="left">
+    <img :src="movie.image" width="100%">
   </div>
-  <p>简介：{{movie.summary}}</p>
-  <p>出版社：{{movie.publisher}}</p>
+  <div class="right">
+    <div class="media">
+      <p class="media-left">电影名:</p>
+      <p class="media-body">{{movie.alt_title}} ({{movie.title}})</p>
+    </div>
+    <div class="media">
+      <p class="media-left">评分:</p>
+      <p class="media-body">{{movie.rating.average}}</p>
+    </div>
+    <div class="media">
+      <p class="media-left">标签：</p>
+      <p class="media-body">
+        <span v-for="tag in movie.tags" class="name">{{tag.name}}</span>
+      </p>
+    </div>
+    <div class="media">
+      <p class="media-left">主演：</p>
+      <P class="media-body">
+        <span v-for="cast in casts" class="name">{{cast}}</span>
+      </P>
+    </div>
+    <div class="media">
+      <p class="media-left">电影简介：</p>
+      <p class="media-body">{{movie.summary}}</p>
+    </div>
+
+    <div class="media">
+      <p class="media-left"></p>
+      <div class="media-body">
+        <fav :movieid="movie.id" :movietitle="movie.title"></fav>
+        <a v-link="{ path: '/movies' }">
+          <button type="button" class="btn">返回</button>
+        </a>
+      </div>
+    </div>
+  </div>
 </template>
 <style>
   .btn-box {
@@ -28,6 +54,30 @@
     height: auto;
     padding: 20px 0;
   }
+
+  p {
+    color: #EAEAEA;
+    padding: 0 0 10px 0;
+    line-height: 1.8;
+  }
+
+  .media .media-left {
+    width: 90px;
+    display: table-cell;
+  }
+
+  .media .media-body {
+    display: table-cell;
+  }
+
+  .cover {
+    width: 20%;
+    height: auto;
+  }
+
+  .name {
+    padding: 0 20px 0 0;
+  }
 </style>
 <script>
   import Fav from './faved.vue'
@@ -36,7 +86,8 @@
       return {
         msg: '',
         movie: {},
-        myfavorites: []
+        myfavorites: [],
+        casts: []
       }
     },
     components: {
@@ -60,6 +111,8 @@
         return this.$http.jsonp('https://api.douban.com/v2/movie/' + this.$route.params.movie_id).then(
                 function (data) {
                   self.$set('movie', data.data)
+                  self.casts = data.data.attrs.cast
+                  console.log(self.$get('movie'))
                 },
                 function () {
                 }

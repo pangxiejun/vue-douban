@@ -1,5 +1,8 @@
 <template>
-  <input type="text" v-model="query" @keyup.enter="search()" placeholder="请输入你需要找的电影"/>
+  <div class="clearfix btn-group">
+    <a v-link="{ path: '/' }" class="btnn m2">首页</a>
+    <input type="text" v-model="query" @keyup.enter="search()" placeholder="请输入你需要找的电影"/>
+  </div>
   <ul class="clearfix">
     <li v-for="movie in movies" class="clearfix">
       <!--<div class="img" style="background-image:url({{}})">-->

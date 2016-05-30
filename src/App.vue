@@ -1,10 +1,6 @@
 <template>
   <div id="app">
     <h1 class="head">我的电影院</h1>
-    <div class="btn-group">
-      <a v-link="{ path: '/' }" class="btnn m2">首页</a>
-      <a v-link="{ path: '/movies' }" class="btnn">搜索</a>
-    </div>
     <router-view></router-view>
 </template>
 <style>

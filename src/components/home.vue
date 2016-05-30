@@ -1,4 +1,8 @@
 <template>
+  <div class="clearfix btn-group">
+    <a v-link="{ path: '/' }" class="btnn m2">首页</a>
+    <a v-link="{ path: '/movies' }" class="btnn">搜索</a>
+  </div>
   <ul class="clearfix">
     <li v-for="movie in movies" class="clearfix">
       <!--<div class="img" style="background-image:url({{}})">-->
@@ -27,12 +31,12 @@
   .clearfix {
     overflow: auto;
     zoom: 1;
-    padding: 0;
   }
 
   ul {
     width: 100%;
     height: auto;
+    padding: 0;
   }
 
   img {
@@ -57,6 +61,8 @@
   }
 
   .right {
+    width: 80%;
+    float: left;
     padding: 0 20px;
   }
 

@@ -9,7 +9,7 @@
 
       <!--</div>-->
       <div class="left">
-        <img :src="movie.images.large" alt="" width="100%">
+        <img :src="movie.images.large" alt="电影海报" width="100%">
       </div>
       <div class="right">
         <a v-link="{ path: '/movies/' + movie.id }" class="title">

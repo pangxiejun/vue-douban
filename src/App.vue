@@ -6,13 +6,16 @@
 <style>
   body {
     width: 100%;
-    height: 100%;
-    background: #3E5098;
+    min-height: 100vh;
+    background-image: -webkit-linear-gradient(to bottom, orange, green);
+    background-image: linear-gradient(to bottom, orange, green);
     background-size: 100%;
     background-repeat: no-repeat;
   }
 
   .head {
+    height: 70px;
+    line-height: 70px;
     padding: 0 20px;
     color: #EAEAEA;
   }

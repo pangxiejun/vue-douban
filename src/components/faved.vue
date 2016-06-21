@@ -1,10 +1,10 @@
 <template>
-  <button v-if="!isFaved" @click.prevent="addFav()" class="btn">收藏</button>
-  <button v-else @click.prevent="removeFav()" class="btn">取消收藏</button>
+  <button v-if="isFaved" @click.prevent="addFav()" class="btn">收藏</button>
+  <button v-else @click.prevent="removeFav(index)" class="btn">取消收藏</button>
 </template>
 <style>
   .btn {
-    width: 60px;
+    width: 90px;
     height: 30px;
     line-height: 30px;
   }
@@ -14,15 +14,9 @@
   import Store from './../store.js'
   export default {
     props: ['movieid', 'movietitle'],
-    computed: {
-      isFaved: function () {
-        var movies = Store.fetch()
-        for (var i = 0; i < movies.length; i++) {
-          if (movies[i].movieid === this.movieid) {
-            return true
-          }
-        }
-        return false
+    data () {
+      return {
+        isFaved: true
       }
     },
     methods: {
@@ -34,8 +28,14 @@
         var movies = Store.fetch()
         movies.push(movie)
         Store.save(movies)
+        this.isFaved = false
+        console.log(movies)
       },
-      removeFav: function () {
+      removeFav: function (index) {
+        var movies = Store.fetch()
+        movies.$remove(index)
+        this.isFaved = true
+        console.log(movies)
       }
     }
   }

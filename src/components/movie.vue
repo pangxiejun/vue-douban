@@ -9,7 +9,7 @@
     </div>
     <div class="media">
       <p class="media-left">评分:</p>
-      <p class="media-body">{{movie.rating.average}}</p>
+      <p class="media-body">{{average}}</p>
     </div>
     <div class="media">
       <p class="media-left">标签：</p>
@@ -87,23 +87,12 @@
         msg: '',
         movie: {},
         myfavorites: [],
-        casts: []
+        casts: [],
+        average: ''
       }
     },
     components: {
       Fav
-    },
-    methods: {
-      fav: function (movieid, movietitle) {
-        // var self = this
-        this.myfavorites.push({movie_id: movieid, movie_title: movietitle})
-        // console.log(JSON.stringify({movie_id, movie_title}))
-        window.localStorage.setItem('favedmovies', window.JSON.stringify({movieid, movietitle}))
-      },
-      cancel_fav: function (movieid) {
-        console.log('hi' + movieid)
-        // this->msg = localStorage.getItem(movie_id)
-      }
     },
     route: {
       data: function () {
@@ -112,6 +101,7 @@
                 function (data) {
                   self.$set('movie', data.data)
                   self.casts = data.data.attrs.cast
+                  self.average = data.data.rating.average
                   console.log(self.$get('movie'))
                 },
                 function () {

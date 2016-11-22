@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 import Resource from 'vue-resource'
 import App from './App'
 import Favorites from './components/faved'
-import Movies from './components/search'
 import Movie from './components/movie'
 import Home from './components/home'
+import Collect from './components/collect'
 
 Vue.use(VueRouter)
 Vue.use(Resource)
@@ -18,11 +18,15 @@ router.map({
   '/favorites': {
     component: Favorites
   },
-  '/movies': {
-    component: Movies
-  },
   '/movies/:movie_id': {
     component: Movie
+  },
+  '/collect': {
+    component: Collect
   }
 })
 router.start(App, 'app')
+router.beforeEach(function (transition) {
+  window.scrollTo(0, 0)
+  transition.next()
+})

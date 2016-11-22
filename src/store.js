@@ -1,10 +1,10 @@
-var STORAGE_KEY = 'favedmovies'
+var STORAGE = 'favedmovies'
 
 export default {
   fetch: function () {
-    return window.JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '[]')
+    return window.JSON.parse(window.localStorage.getItem(STORAGE) || '[]')
   },
   save: function (favorites) {
-    window.localStorage.setItem(STORAGE_KEY, window.JSON.stringify(favorites))
+    window.localStorage.setItem(STORAGE, window.JSON.stringify(favorites))
   }
 }

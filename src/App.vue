@@ -1,45 +1,91 @@
 <template>
-  <div id="app">
-    <h1 class="head">我的电影院</h1>
     <router-view></router-view>
 </template>
 <style>
   body {
     width: 100%;
     min-height: 100vh;
-    background-image: -webkit-linear-gradient(to bottom, orange, green);
-    background-image: linear-gradient(to bottom, orange, green);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    /*background-image: -webkit-linear-gradient(to bottom, orange, green);*/
+    /*background-image: linear-gradient(to bottom, orange, green);*/
+    /*background-size: 100%;*/
+    /*background-repeat: no-repeat;*/
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    background: url(http://weazm-abc.qiniudn.com/abc-penny_bg.png);
+    background-size: 110%;
+    background-position: right center;
   }
 
-  .head {
-    height: 70px;
-    line-height: 70px;
-    padding: 0 20px;
-    color: #EAEAEA;
+  @media only screen and (min-width: 320px) {
+    body,
+    html {
+      font-size: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 375px) {
+    body,
+    html {
+      font-size: 11px;
+    }
+  }
+
+  @media only screen and (min-width: 414px) {
+    body,
+    html {
+      font-size: 12px;
+    }
+  }
+
+  @font-face {
+    font-family: 'iconfont';  /* project id："80269" */
+    src: url('//at.alicdn.com/t/font_pqt75iev0x9ftj4i.eot');
+    src: url('//at.alicdn.com/t/font_pqt75iev0x9ftj4i.eot') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_pqt75iev0x9ftj4i.woff') format('woff'),
+    url('//at.alicdn.com/t/font_pqt75iev0x9ftj4i.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_pqt75iev0x9ftj4i.svg#iconfont') format('svg');
+  }
+
+  .iconfont {
+    font-family: "iconfont";
+    font-size: 1.6rem;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
 
   .btn-group {
-    padding: 0 20px;
+    padding: 0 1rem;
   }
 
-  .btnn {
+  .btn {
     display: block;
-    width: 100px;
-    height: 30px;
-    float: left;
+    padding: .75rem;
     background: #fff;
-    border: 1px solid #ccc;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 5px;
-    color: #000;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1.2rem;
+  }
+
+  .btn .iconfont {
+    font-size: 1.2rem;
   }
 
   #app {
-    width: 980px;
+    width: 100%;
     margin: 0 auto;
   }
 

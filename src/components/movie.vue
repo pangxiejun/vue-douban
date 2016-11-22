@@ -1,8 +1,6 @@
 <template>
-  <div class="left">
-    <img :src="movie.image" width="100%">
-  </div>
-  <div class="right">
+  <!--   <img :src="movie.image" class="cover"> -->
+  <div class="content">
     <div class="media">
       <p class="media-left">电影名:</p>
       <p class="media-body">{{movie.alt_title}} ({{movie.title}})</p>
@@ -29,23 +27,36 @@
     </div>
 
     <div class="media">
-      <p class="media-left"></p>
-      <div class="media-body">
-        <fav :movieid="movie.id" :movietitle="movie.title"></fav>
-        <a v-link="{ path: '/movies' }">
-          <button type="button" class="btn">返回</button>
-        </a>
+      <div class="media-body clearfix">
+        <a href="#" v-link="{path:'/'}" class="btn btn-float">返回首页</a>
+        <a href="#" v-link="{path:'/collect'}" class="btn btn-float">我的收藏</a>
       </div>
     </div>
   </div>
 </template>
 <style>
+.btn-float{
+  width: 45%;
+  float: left;
+  text-align: center;
+  background: #ff0;
+  color: #333;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+.btn-float:nth-child(2n+1){
+  margin-right: 10%;
+}
+.clearfix{
+  zoom: 1;
+  overflow: auto;
+}
   .btn-box {
     width: 30%;
   }
 
   .btn-m {
-    margin: 10px 25%;
+    margin: 1rem 25%;
   }
 
   img {
@@ -55,28 +66,37 @@
     padding: 20px 0;
   }
 
-  p {
-    color: #EAEAEA;
-    padding: 0 0 10px 0;
-    line-height: 1.8;
+  .media {
+    padding: .5rem 0;
   }
 
   .media .media-left {
-    width: 90px;
-    display: table-cell;
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
+    color: #e87f0b;
+    font-weight: bold;
   }
 
   .media .media-body {
-    display: table-cell;
+    /*display: table-cell;*/
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding-bottom: .5rem;
+    vertical-align: top;
   }
 
   .cover {
+    display: block;
     width: 20%;
-    height: auto;
+    margin: 1rem;
   }
 
   .name {
-    padding: 0 20px 0 0;
+    padding: 0 1rem 0 0;
+  }
+
+  .content {
+    padding:1rem;
   }
 </style>
 <script>
@@ -98,14 +118,14 @@
       data: function () {
         var self = this
         return this.$http.jsonp('https://api.douban.com/v2/movie/' + this.$route.params.movie_id).then(
-                function (data) {
-                  self.$set('movie', data.data)
-                  self.casts = data.data.attrs.cast
-                  self.average = data.data.rating.average
-                  console.log(self.$get('movie'))
-                },
-                function () {
-                }
+          function (data) {
+            self.$set('movie', data.data)
+            self.casts = data.data.attrs.cast
+            self.average = data.data.rating.average
+            console.log(self.$get('movie'))
+          },
+          function () {
+          }
         )
       }
     }

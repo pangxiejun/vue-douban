@@ -1,5 +1,8 @@
 <template>
-  <!--   <img :src="movie.image" class="cover"> -->
+  <div class="head">
+    <a v-link="{ path: '/' }" class="home"><i class="iconfont">&#xe63d;</i></a>
+    <p class="text">电影详情</p>
+  </div>
   <div class="content">
     <div class="media">
       <p class="media-left">电影名:</p>
@@ -96,7 +99,7 @@
   }
 
   .content {
-    padding:1rem;
+    padding:4rem 1rem 1rem 1rem;
   }
 </style>
 <script>

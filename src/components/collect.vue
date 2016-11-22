@@ -1,4 +1,8 @@
 <template>
+  <div class="head">
+    <a v-link="{ path: '/' }" class="home"><i class="iconfont">&#xe63d;</i></a>
+    <p class="text">我的收藏</p>
+  </div>
   <ul class="clearfix">
     <li v-for="movie in movies" class="clearfix">
       <div class="left">
@@ -43,6 +47,7 @@
   .tips .text{
      padding: 2rem 0 1rem 0;
   }
+
 </style>
 <script type="text/javascript">
   import Fav from './faved.vue'

@@ -96,5 +96,16 @@
   .tc {
     text-align: center;
   }
-
+  .head .text {
+    display: block;
+    width: 90%;
+    flex: 9;
+    box-flex: 9;
+    -webkit-flex: 9;
+    -webkit-flex-box: 9;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fff;
+    padding-right: 10%;
+  }
 </style>

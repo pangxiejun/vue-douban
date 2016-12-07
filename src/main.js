@@ -13,20 +13,29 @@ Vue.use(Resource)
 var router = new VueRouter()
 router.map({
   '/': {
-    component: Home
+    component: Home,
+    title: '我的电影合集'
   },
   '/favorites': {
     component: Favorites
   },
   '/movies/:movie_id': {
-    component: Movie
+    component: Movie,
+    title: '电影详情'
   },
   '/collect': {
-    component: Collect
+    component: Collect,
+    title: '我的收藏'
   }
 })
 router.start(App, 'app')
 router.beforeEach(function (transition) {
   window.scrollTo(0, 0)
   transition.next()
+})
+router.afterEach(function (transition) {
+  if (transition.to.title) {
+    document.title = transition.to.title
+    console.log(document.title)
+  }
 })

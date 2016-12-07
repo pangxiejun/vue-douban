@@ -3,7 +3,7 @@
     <a v-link="{ path: '/' }" class="home"><i class="iconfont">&#xe63d;</i></a>
     <p class="text">我的收藏</p>
   </div>
-  <ul class="clearfix">
+  <ul class="list clearfix">
     <li v-for="movie in movies" class="clearfix">
       <div class="left">
         <img :src="movie.movieimage" alt="" width="100%">

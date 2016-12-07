@@ -1,5 +1,5 @@
 <template>
-  <div class="head">
+  <div class="head v-cloak">
     <a v-link="{ path: '/collect' }" class="home"><i class="iconfont">&#xe629;</i></a>
     <input type="text" v-model="query" placeholder="请输入你需要找的电影" class="input"/>
     <a class="search" @click="search()"><i class="iconfont">&#xe612;</i></a>
@@ -173,7 +173,8 @@
       return {
         movies: [],
         favorite: true,
-        loading: true
+        loading: true,
+        message: '我的电影合集'
       }
     },
     components: {
